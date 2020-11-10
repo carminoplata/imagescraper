@@ -1,11 +1,18 @@
 # Folder where collected images are stored 
 dataset/beerbrands/
 
+# Distribution Folders
+dist/
+build/
+BingImageScraper.egg-info/
+
 # Log Folder
 log/
 
 # Python Files
 __pycache__
 
+
 # Mac Files
 .DS_Store
+
