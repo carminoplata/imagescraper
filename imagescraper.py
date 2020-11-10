@@ -16,12 +16,6 @@ import threading
 from bingsearch import BingSearch
 from pathlib import Path
 
-"""
-def download_bulk_images(query, num_images=100, outputDir='dataset'):
-    return downloader.download(query, num_images, outputDir, 
-                               adult_filter_off=True)
-"""
-
 def parsearguments(args):
     target = ''
     output_folder = ''
