@@ -39,8 +39,10 @@ class BingSearch(threading.Thread):
         self.logger.setLevel(level)
         formatter = logging.Formatter(
             '%(asctime)s - [%(name)s] - [%(levelname)s] - %(message)s')
-        filehandler = logging.FileHandler("{}/BeerScraper/log/{}.log".format(os.getcwd(),
-                                                         self.name))
+        logDir = os.path.join(os.getcwd(), 'log')
+        if not os.path.exists(logDir):
+            os.makedirs(logDir)
+        filehandler = logging.FileHandler(os.path.join(logDir, self.name+".log"))
         filehandler.setFormatter(formatter)
         self.logger.addHandler(filehandler)
 

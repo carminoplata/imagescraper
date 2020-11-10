@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Thu Oct 22 13:31:29 2020
 
-@author: carmine
+@author: carminoplata
 """
-#from bing_image_downloader import downloader
 
 import logging
 import logging.config
@@ -47,10 +44,8 @@ def parsearguments(args):
     return target, num_images, output_folder, loglevel
 
 
-
-
 if __name__ == '__main__':
-    logging.config.fileConfig(os.path.join(os.getcwd(), 'config/logging.conf'))
+    logging.config.fileConfig(os.path.join(os.getcwd(), 'logging.conf'))
     logger = logging.getLogger('ImageScraper')
     logger.info("Welcome to ImageScraper!")
     
@@ -71,7 +66,8 @@ if __name__ == '__main__':
         
         if not os.path.isdir(output_folder):
                 os.mkdir("{}/{}".format(os.getcwd(), output_folder))
-        beerSearcher = BingSearch("BeerSearcher", target,
+        
+        beerSearcher = BingSearch(target.capitalize()+"Searcher", target,
                                   "+filterui:imagesize-medium", num_images,
                                   output_folder, cv, loglevel)
         peopleSearcher = BingSearch("PeopleSearcher", "people",
@@ -83,9 +79,6 @@ if __name__ == '__main__':
         objectSearcher = BingSearch("ObjectSearcher", "objects", 
                                     "+filterui:imagesize-medium", num_images,
                                     output_folder, cv, loglevel)
-        
-        #beerSearcher.run()
-        
         
         tasks = [beerSearcher, peopleSearcher, animalSearcher, objectSearcher]
         

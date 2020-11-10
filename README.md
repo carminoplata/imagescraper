@@ -31,5 +31,5 @@ Actually, the Image Scraper is going to collect images only from Bing Search
   python3 imagescraper.py -i <category_to_search> -n <num_of_images> -o <output_folder> 
   ```
 
-**WARNING**: output_folder is the full path at the folder where you want to store images and it must exist.
+**WARNING**: output_folder is the full path at the folder where you want to store images.
 
