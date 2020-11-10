@@ -1,0 +1,11 @@
+# Folder where collected images are stored 
+dataset/beerbrands/
+
+# Log Folder
+log/
+
+# Python Files
+__pycache__
+
+# Mac Files
+.DS_Store
